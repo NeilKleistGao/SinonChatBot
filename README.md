@@ -1,4 +1,4 @@
-# Sinon CharBot for Wechat.<br/>
+# Sinon ChatBot for Wechat.<br/>
 Created by NeilKleistGao.<br/>
 WechatAPI [github](https://github.com/littlecodersh/itchat)<br/>
 Image is from [Pixiv](https://www.pixiv.net/member_illust.php?mode=medium&illust_id=66989215)<br/>
@@ -22,5 +22,5 @@ Image is from [Pixiv](https://www.pixiv.net/member_illust.php?mode=medium&illust
 2018-02-20<br/>
 + 修改了远程控制时无可用功能的日志打印
 + README.md（就是我哒）添加了API和图片的来源
-+ 添加了开源证书（证书若有错误请联系修改）
++ 添加了MIT LICENSE
 <br/>
