@@ -24,3 +24,10 @@ Image is from [Pixiv](https://www.pixiv.net/member_illust.php?mode=medium&illust
 + README.md（就是我哒）添加了API和图片的来源
 + 添加了MIT LICENSE
 <br/>
+
+---------
+## update version 0.2.0<br/>
+2018-02-20<br/>
++ 添加了未经测试的群聊自动回复功能
++ 允许通过命令行进行用户名和免打扰开启的参数传递
+<br/>
