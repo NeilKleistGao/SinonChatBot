@@ -9,6 +9,8 @@ Image is from [Pixiv](https://www.pixiv.net/member_illust.php?mode=medium&illust
 + 安装itchat
 <br/>
 
+# 更新日志<br/>
+
 ---------
 ## update version 0.1.0<br/>
 2018-02-20<br/>
@@ -27,7 +29,13 @@ Image is from [Pixiv](https://www.pixiv.net/member_illust.php?mode=medium&illust
 
 ---------
 ## update version 0.2.0<br/>
-2018-02-20<br/>
+2018-02-21<br/>
 + 添加了未经测试的群聊自动回复功能
 + 允许通过命令行进行用户名和免打扰开启的参数传递
+<br/>
+
+---------
+## update version 0.2.1<br/>
+2018-02-21<br/>
++ 修改了远程控制的处理机制
 <br/>

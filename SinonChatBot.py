@@ -29,7 +29,8 @@ def notice(name):
     print "%s send a message to you." % name
 
 def remoteControl(msg):
-    print "woops!There is no function can be used yet~"
+    if msg["Text"] == "-h":
+        print "woops!There is no function can be used yet~"
 
 def sinonService(msg):
     itchat.send("woops!There is no function can be used yet~", msg["FromUserName"])
@@ -42,7 +43,7 @@ def donotDisturb(msg):
 
 @itchat.msg_register([TEXT, MAP, CARD, SHARING, PICTURE, RECORDING, ATTACHMENT, VIDEO], isGroupChat = False)
 def autoRecieve(msg):
-    if msg["ToUserName"] == "filehelper":
+    if msg["ToUserName"] == "filehelper" and msg["Type"] == "Text":
         remoteControl(msg)
     else:
         messageProccess(msg)
@@ -62,4 +63,5 @@ elif len(sys.argv) == 3:
     isDisturbOn = sys.argv[2]
 itchat.auto_login(hotReload=True)
 author = itchat.search_friends(nickName=username)[0]["UserName"]
+itchat.send("You have started Sinon on your PC.Please enter -h for help.", "filehelper")
 itchat.run()
