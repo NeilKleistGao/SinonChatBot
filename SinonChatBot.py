@@ -14,37 +14,37 @@ def messageProccess(msg):
         if msg["Type"] == "Text":
             if re.search("#sinon", msg["Text"]) == None:
                 if isDisturbOn:
-                    donotDisturb(msg)
+                    donotDisturb(msg["FromUserName"])
                 else:
                     notice(msg["NickName"])
             else:
-                sinonService(msg)
+                sinonService(msg["FromUserName"])
         else:
             if isDisturbOn:
-                donotDisturb(msg)
+                donotDisturb(msg["FromUserName"])
             else:
                 notice(msg["NickName"])
 
 def notice(name):
     print "%s send a message to you." % name
 
-def remoteControl(msg):
-    if msg["Text"] == "-h":
+def remoteControl(text):
+    if text == "-h":
         print "woops!There is no function can be used yet~"
 
-def sinonService(msg):
-    itchat.send("woops!There is no function can be used yet~", msg["FromUserName"])
+def sinonService(name):
+    itchat.send("woops!There is no function can be used yet~", name)
 
-def donotDisturb(msg):
-    if not visit.get(msg["FromUserName"], False):
-        visit[msg["FromUserName"]] = True
-        itchat.send("@img@%s" % "sinon.jpg", msg["FromUserName"])
-        itchat.send("Sorry!%s can't reply you immediately!\nI'm auto-reply bot called sinon. Send #sinon and chat with me!(If you are in a group please @Fa1sePRoMiSe first.)\nsinon's github:https://github.com/NeilKleistGao/SinonChatBot\nWechatAPI github:https://github.com/littlecodersh/itchat\nImage is from Pixiv:https://www.pixiv.net/member_illust.php?mode=medium&illust_id=66989215" % username, msg["FromUserName"])
+def donotDisturb(name):
+    if not visit.get(name, False):
+        visit[name] = True
+        itchat.send("@img@%s" % "sinon.jpg", name)
+        itchat.send("Sorry!%s can't reply you immediately!\nI'm auto-reply bot called sinon. Send #sinon and chat with me!(If you are in a group please @Fa1sePRoMiSe first.)\nsinon's github:https://github.com/NeilKleistGao/SinonChatBot\nWechatAPI github:https://github.com/littlecodersh/itchat\nImage is from Pixiv:https://www.pixiv.net/member_illust.php?mode=medium&illust_id=66989215" % username, name)
 
 @itchat.msg_register([TEXT, MAP, CARD, SHARING, PICTURE, RECORDING, ATTACHMENT, VIDEO], isGroupChat = False)
 def autoRecieve(msg):
     if msg["ToUserName"] == "filehelper" and msg["Type"] == "Text":
-        remoteControl(msg)
+        remoteControl(msg["Text"])
     else:
         messageProccess(msg)
 

@@ -39,3 +39,9 @@ Image is from [Pixiv](https://www.pixiv.net/member_illust.php?mode=medium&illust
 2018-02-21<br/>
 + 修改了远程控制的处理机制
 <br/>
+
+---------
+## update version 0.2.2<br/>
+2018-02-21<br/>
++ 优化了部分函数的参数
+<br/>
