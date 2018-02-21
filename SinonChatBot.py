@@ -18,7 +18,7 @@ def messageProccess(msg):
                 else:
                     notice(msg["NickName"])
             else:
-                sinonService(msg["FromUserName"])
+                sinonService(msg["FromUserName"], msg["Text"])
         else:
             if isDisturbOn:
                 donotDisturb(msg["FromUserName"])
@@ -30,9 +30,17 @@ def notice(name):
 
 def remoteControl(text):
     if text == "-h":
-        print "woops!There is no function can be used yet~"
+        itchat.send("-s Stop auto reply\n-d Turn on the Don't disturb\n -f Turn off the Don't disturb", "filehelper")
+    elif text == "-s":
+        itchat.logout()
+    elif text == "-d":
+        isDisturbOn = True
+        itchat.send("Turn on the Don't disturb", "filehelper")
+    elif text == "-f":
+        isDisturbOn = False
+        itchat.send("Turn off the Don't disturb", "filehelper")
 
-def sinonService(name):
+def sinonService(name, text):
     itchat.send("woops!There is no function can be used yet~", name)
 
 def donotDisturb(name):
